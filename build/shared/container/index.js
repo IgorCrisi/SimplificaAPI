@@ -1,0 +1,22 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var DestinoRepository_1 = __importDefault(require("../../modules/destinos/typeorm/entities/repositories/DestinoRepository"));
+var FormaPagamentoRepository_1 = __importDefault(require("../../modules/formaPagamento/typeorm/entities/repositories/FormaPagamentoRepository"));
+var FornecedorRepository_1 = __importDefault(require("../../modules/fornecedor/typeorm/entities/repositories/FornecedorRepository"));
+var LojaRepository_1 = __importDefault(require("../../modules/lojas/typeorm/entities/repositories/LojaRepository"));
+var NotaRepository_1 = __importDefault(require("../../modules/notas/typeorm/entities/repositories/NotaRepository"));
+var TipoNotaRepository_1 = __importDefault(require("../../modules/tipoNota/typeorm/entities/repositories/TipoNotaRepository"));
+var UsersRepository_1 = __importDefault(require("../../modules/users/typeorm/entities/repositories/UsersRepository"));
+var UserTokensRepository_1 = __importDefault(require("../../modules/users/typeorm/entities/repositories/UserTokensRepository"));
+var tsyringe_1 = require("tsyringe");
+tsyringe_1.container.registerSingleton('LojaRepository', LojaRepository_1.default);
+tsyringe_1.container.registerSingleton('TipoNotaRepository', TipoNotaRepository_1.default);
+tsyringe_1.container.registerSingleton('DestinoRepository', DestinoRepository_1.default);
+tsyringe_1.container.registerSingleton('FormaPagamentoRepository', FormaPagamentoRepository_1.default);
+tsyringe_1.container.registerSingleton('UsersRepository', UsersRepository_1.default);
+tsyringe_1.container.registerSingleton('UsersTokensRepository', UserTokensRepository_1.default);
+tsyringe_1.container.registerSingleton('FornecedorRepository', FornecedorRepository_1.default);
+tsyringe_1.container.registerSingleton('NotaRepository', NotaRepository_1.default);
